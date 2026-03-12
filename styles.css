@@ -160,12 +160,13 @@ body {
 /* Hero Center (Avatar) */
 .hero-center {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
   width: auto;
-  height: 85vh;
+  height: 70vh; /* Reduced height to fit original portrait better */
+  max-width: 90vw;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -174,6 +175,7 @@ body {
 
 .main-avatar {
   height: 100%;
+  width: auto;
   max-width: 100%;
   object-fit: contain;
   object-position: bottom center;
