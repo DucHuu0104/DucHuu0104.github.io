@@ -111,7 +111,7 @@ body {
 .hero-left {
   position: relative;
   z-index: 10;
-  flex: 1;
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -142,6 +142,7 @@ body {
   gap: 1.5rem;
   margin-top: auto;
   margin-bottom: 2rem;
+  align-items: flex-start;
 }
 
 .social-links-vertical a {
@@ -185,7 +186,7 @@ body {
 .hero-right {
   position: relative;
   z-index: 10;
-  flex: 1;
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -200,7 +201,6 @@ body {
   flex-direction: column;
   align-items: flex-start; /* Align text block to its own left, but container is on right */
   position: relative;
-  right: -2vw;
 }
 
 .role-small {
