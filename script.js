@@ -1,6 +1,6 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // 1. Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Reveal Animations on Scroll
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -40,8 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
+            if (targetId === '#') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return;
+            }
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 targetElement.scrollIntoView({
@@ -49,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     block: 'start'
                 });
             }
-            
+
             // Close mobile menu if open (implementation dependent)
         });
     });
@@ -63,4 +69,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, 100);
+
+    // 4. Work Experience Toggle
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    const toggleBg = document.querySelector('.toggle-bg');
+    const timelineContainers = document.querySelectorAll('.timeline-container');
+
+    if (toggleBtns.length > 0) {
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active from all buttons
+                toggleBtns.forEach(b => b.classList.remove('active'));
+                // Add active to clicked button
+                btn.classList.add('active');
+
+                // Move the indicator
+                const target = btn.getAttribute('data-target');
+                if (target === 'edu-content') {
+                    toggleBg.setAttribute('data-active', 'edu');
+                } else {
+                    toggleBg.removeAttribute('data-active');
+                }
+
+                // Hide all content, then show target with animation
+                timelineContainers.forEach(container => {
+                    container.classList.remove('active-content');
+                    container.style.display = 'none'; // Ensure it's hidden immediately for clean switch
+                });
+
+                const activeContainer = document.getElementById(target);
+                if (activeContainer) {
+                    activeContainer.style.display = 'block';
+                    // setTimeout to allow display block to apply before adding animation class
+                    setTimeout(() => {
+                        activeContainer.classList.add('active-content');
+                    }, 10);
+                }
+            });
+        });
+    }
 });
