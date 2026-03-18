@@ -95,7 +95,7 @@ body {
 .glow-bg {
   position: absolute;
   top: 55%;
-  left: 45%;
+  left: 40%;
   /* Shifted slightly to the left to match the avatar's visual center */
   transform: translate(-50%, -50%);
   width: 50vw;
