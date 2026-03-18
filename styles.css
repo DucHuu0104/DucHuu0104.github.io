@@ -109,9 +109,9 @@ body {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero:hover .glow-bg {
-  transform: translate(-50%, -50%) scale(1.3);
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
+.hero:has(.main-avatar:hover) .glow-bg {
+  transform: translate(-50%, -50%) scale(1.4);
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.65) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 /* Hero Left (Name & Socials) */
@@ -187,6 +187,8 @@ body {
   max-width: 100%;
   object-fit: contain;
   object-position: bottom center;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 /* Hero Right (Role & Resume) */
