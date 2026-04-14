@@ -573,6 +573,24 @@ body {
   gap: 12px;
 }
 
+.project-doi {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem !important;
+  flex: 0 !important;
+}
+
+.project-doi a {
+  color: #06b6d4;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-doi a:hover {
+  color: #7c3aed;
+  text-decoration: underline;
+}
+
 /* Work Experience Section */
 .experience {
   position: relative;
