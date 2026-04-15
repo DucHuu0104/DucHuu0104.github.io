@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -31,6 +33,7 @@
         <!-- Home Section -->
         <section id="home" class="hero">
             <div class="glow-bg"></div>
+            <canvas id="stars-canvas"></canvas>
 
             <div class="hero-left reveal delay-1">
                 <div class="intro">
@@ -43,8 +46,8 @@
                             class="ph ph-linkedin-logo"></i></a>
                     <a href="https://github.com/DucHuu0104" target="_blank" aria-label="GitHub"><i
                             class="ph ph-github-logo"></i></a>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=huuduc01042006@gmail.com" target="_blank" aria-label="Mail"><i
-                            class="ph ph-envelope-simple"></i></a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=huuduc01042006@gmail.com" target="_blank"
+                        aria-label="Mail"><i class="ph ph-envelope-simple"></i></a>
                 </div>
             </div>
 
@@ -105,41 +108,142 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="projects section-padding">
+        <section id="projects" class="projects section-padding" style="position: relative; overflow: hidden;">
+            <!-- Grand Orbit Background -->
+            <div class="projects-bg-orbits">
+                <div class="sun-core"></div>
+                <div class="orbit-ring ring-1"><div class="orbit-planet mercury"></div></div>
+                <div class="orbit-ring ring-2"><div class="orbit-planet venus"></div></div>
+                <div class="orbit-ring ring-3"><div class="orbit-planet earth"></div></div>
+                <div class="orbit-ring ring-4"><div class="orbit-planet mars"></div></div>
+                <div class="orbit-ring ring-5"><div class="orbit-planet jupiter"></div></div>
+                <div class="orbit-ring ring-6"><div class="orbit-planet saturn"></div></div>
+                <div class="orbit-ring ring-7"><div class="orbit-planet neptune"></div></div>
+            </div>
+
             <div class="section-header reveal">
                 <h2>Featured <span class="gradient-text">Projects</span></h2>
                 <p>Some things I've built recently</p>
             </div>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card glass-panel reveal">
-                    <div class="project-img project-img-watermark"></div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span>Deep Learning</span>
-                            <span>Computer Vision</span>
+            <div class="projects-container reveal">
+                <div class="swiper projects-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Project 1 -->
+                        <div class="swiper-slide">
+                            <div class="project-card-slider glass-panel">
+                                <div class="project-header">
+                                    <span class="project-number">01</span>
+                                    <span class="project-category">RESEARCH</span>
+                                </div>
+                                <div class="project-content">
+                                    <h3>Image Watermarking</h3>
+                                    <div class="project-tags">
+                                        <span>SIFT</span>
+                                        <span>Computer Vision</span>
+                                    </div>
+                                    <p>A visual protection guide leveraging deep learning to embed and extract robust
+                                        watermarks.</p>
+                                    <p class="project-doi">DOI: <a href="https://doi.org/10.15625/vap.2025.0338"
+                                            target="_blank">10.15625/vap.2025.0338</a></p>
+                                    <a href="https://ebook365.vn/proceedings-of-the-18th-national-conference-on-fundamental-and-applied-information-technology-research-fair-2025-rNKpW.html"
+                                        target="_blank" class="project-link">View Project <i
+                                            class="ph ph-arrow-up-right"></i></a>
+                                </div>
+                                <div class="project-img project-img-watermark"></div>
+                            </div>
                         </div>
-                        <h3>Image Watermarking</h3>
-                        <p>A visual protection guide leveraging deep learning to embed and extract robust watermarks,
-                            safeguarding digital assets.</p>
-                        <p class="project-doi">DOI: <a href="https://doi.org/10.15625/vap.2025.0338" target="_blank">10.15625/vap.2025.0338</a></p>
-                        <a href="https://ebook365.vn/proceedings-of-the-18th-national-conference-on-fundamental-and-applied-information-technology-research-fair-2025-rNKpW.html" target="_blank" class="project-link">View Project <i class="ph ph-arrow-up-right"></i></a>
+
+                        <!-- Project 2 -->
+                        <div class="swiper-slide">
+                            <div class="project-card-slider glass-panel">
+                                <div class="project-header">
+                                    <span class="project-number">02</span>
+                                    <span class="project-category">WEB</span>
+                                </div>
+                                <div class="project-content">
+                                    <h3>Creative Agency Site</h3>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                    </div>
+                                    <p>An award-winning agency landing page featuring complex scroll animations and
+                                        webGL effects.</p>
+                                    <a href="#" class="project-link">View Project <i
+                                            class="ph ph-arrow-up-right"></i></a>
+                                </div>
+                                <div class="project-img placeholder-gradient-2"></div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="swiper-slide">
+                            <div class="project-card-slider glass-panel">
+                                <div class="project-header">
+                                    <span class="project-number">03</span>
+                                    <span class="project-category">AI</span>
+                                </div>
+                                <div class="project-content">
+                                    <h3>Sentiment Analysis</h3>
+                                    <div class="project-tags">
+                                        <span>NLP</span>
+                                        <span>Python</span>
+                                    </div>
+                                    <p>Real-time processing of social media feeds to detect public sentiment and
+                                        emotional trends.</p>
+                                    <a href="#" class="project-link">View Project <i
+                                            class="ph ph-arrow-up-right"></i></a>
+                                </div>
+                                <div class="project-img placeholder-gradient-3"></div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="swiper-slide">
+                            <div class="project-card-slider glass-panel">
+                                <div class="project-header">
+                                    <span class="project-number">04</span>
+                                    <span class="project-category">MEDICAL AI</span>
+                                </div>
+                                <div class="project-content">
+                                    <h3>Diagnosis Support</h3>
+                                    <div class="project-tags">
+                                        <span>CNN</span>
+                                        <span>Computer Vision</span>
+                                    </div>
+                                    <p>A deep learning system for analyzing medical scans and identifying potential
+                                        anomalies.</p>
+                                    <a href="#" class="project-link">View Project <i
+                                            class="ph ph-arrow-up-right"></i></a>
+                                </div>
+                                <div class="project-img placeholder-gradient-4"></div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="swiper-slide">
+                            <div class="project-card-slider glass-panel">
+                                <div class="project-header">
+                                    <span class="project-number">05</span>
+                                    <span class="project-category">AI</span>
+                                </div>
+                                <div class="project-content">
+                                    <h3>LLM Agent Pipeline</h3>
+                                    <div class="project-tags">
+                                        <span>LangChain</span>
+                                        <span>LLM</span>
+                                    </div>
+                                    <p>An automated multi-agent system designed to handle complex research and task
+                                        automation.</p>
+                                    <a href="#" class="project-link">View Project <i
+                                            class="ph ph-arrow-up-right"></i></a>
+                                </div>
+                                <div class="project-img placeholder-gradient-5"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="project-card glass-panel reveal delay-1">
-                    <div class="project-img placeholder-gradient-2"></div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                        </div>
-                        <h3>Creative Agency Site</h3>
-                        <p>An award-winning agency landing page featuring complex scroll animations and webGL effects.
-                        </p>
-                        <a href="#" class="project-link">View Project <i class="ph ph-arrow-up-right"></i></a>
-                    </div>
-                </div>
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
@@ -253,22 +357,58 @@
 
         <!-- Contact Section -->
         <section id="contact" class="contact section-padding">
-            <div class="contact-card glass-panel reveal">
-                <h2>Let's create something <span class="gradient-text">amazing</span></h2>
-                <p>I'm currently open for new opportunities or simply a chat. Let's connect!</p>
-                <form class="contact-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="input-group">
-                        <textarea placeholder="Your Message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Send Message <i
-                            class="ph ph-paper-plane-tilt"></i></button>
-                </form>
+            <div class="contact-header reveal">
+                <h2>Contact Me</h2>
+                <p>Tell me about your next project.</p>
+                <div class="copy-email-wrapper">
+                    <button id="copy-email-btn" class="copy-email-btn">
+                        <span>Copy email</span>
+                        <i class="ph ph-copy"></i>
+                    </button>
+                    <span id="copy-feedback" class="copy-feedback">Copied!</span>
+                </div>
+            </div>
+
+            <div class="contact-footer-grid reveal delay-1">
+                <!-- Column 1: Info -->
+                <div class="contact-col">
+                    <h3 class="col-title">Email</h3>
+                    <ul class="col-links" style="margin-bottom: 2rem;">
+                        <li><span class="col-link-small">huuduc01042006@gmail.com</span></li>
+                    </ul>
+
+                    <h3 class="col-title">Location</h3>
+                    <ul class="col-links" style="margin-bottom: 2rem;">
+                        <li><span class="col-link-small">Ho Chi Minh, Vietnam</span></li>
+                    </ul>
+
+                    <h3 class="col-title">Phone</h3>
+                    <ul class="col-links">
+                        <li><span class="col-link-small">+84 364 292 889</span></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Social Media -->
+                <div class="contact-col">
+                    <h3 class="col-title">Social Media</h3>
+                    <ul class="col-links">
+                        <li><a href="https://www.linkedin.com/in/huuduc0104/" target="_blank">Linkedin <i
+                                    class="ph ph-arrow-up-right"></i></a></li>
+                        <li><a href="https://github.com/DucHuu0104" target="_blank">GitHub <i
+                                    class="ph ph-arrow-up-right"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Chat -->
+                <div class="contact-col">
+                    <h3 class="col-title">Write Me & We'll Talk</h3>
+                    <ul class="col-links">
+                        <li><a href="https://wa.me/+84364292889" target="_blank">WhatsApp <i
+                                    class="ph ph-arrow-up-right"></i></a></li>
+                        <li><a href="https://t.me/HuuDuc14" target="_blank">Telegram <i
+                                    class="ph ph-arrow-up-right"></i></a></li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
@@ -277,6 +417,8 @@
         <p>© 2026. Designed & Built by Duc Nguyen Huu Dang ❤️</p>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js?v=2"></script>
 </body>
 
