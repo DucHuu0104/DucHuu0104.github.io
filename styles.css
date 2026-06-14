@@ -844,6 +844,10 @@ body {
 }
 
 /* New Gradients */
+.placeholder-gradient-1 {
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+}
+
 .placeholder-gradient-2 {
   background: linear-gradient(120deg, #0ea5e9, #10b981);
 }
@@ -858,10 +862,6 @@ body {
 
 .placeholder-gradient-5 {
   background: linear-gradient(135deg, #8b5cf6, #ec4899);
-}
-
-.project-img-dogkan {
-  background-image: url('DoGKAN.png');
 }
 
 /* DOI Styling */
