@@ -860,8 +860,8 @@ body {
   background: linear-gradient(135deg, #8b5cf6, #ec4899);
 }
 
-.project-img-watermark {
-  background-image: url('watermarking_project.png');
+.project-img-dogkan {
+  background-image: url('DoGKAN.png');
 }
 
 /* DOI Styling */
